@@ -1,1 +1,1 @@
-console.log("hello-project")
+console.log(hello-project);

@@ -4,12 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/231f2a5361.js" crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
-    <h2>Lets Play!</h2>
+    <h1 id="heading" >Rock Paper Scissors</h1>
+
+    <h2 id="intro">Lets Play!</h2>
+
+    <div id="game-area">
+        
+        <div class="player-area">
+            <button data-type="rock" class="btn btn--rock">
+                <i class="fa-sharp fa-regular fa-hand-back-fist"></i>
+            </button>
+
+            <button data-type="paper" class="btn btn--paper">
+                <i class="fa-regular fa-hand"></i>
+            </button>
+
+            <button data-type="scissors" class="btn btn--scissors">
+                <i class="fa-regular fa-hand-scissors"></i>
+            </button>
+
+            <button data-type="submit" class="btn btn--submit">Lets go!</button>
+
+        </div>
+
+        <div class="computer-area">
+
+        </div>
+
+
+
+    </div>
+
+    <div id="score-area">
+        <p class="scores">Your Score: <span id="your-score">0</span></p>
+        <p class="scores">Computer Score: <span id="computer-score">0</span></p>
+    </div>
+
+    <footer>
+
+    </footer>
+
+
 
     <script src="assets/js/script.js"></script>
 </body>
