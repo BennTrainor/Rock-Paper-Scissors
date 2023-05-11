@@ -19,10 +19,20 @@ body {
     margin-right: auto;
 }
 
-.player-area {
+#player-area {
     width: 50%;
     height: 80%;
     
+}
+
+.player-image {
+    margin: auto;
+    object-fit: scale-down;
+
+}
+
+.btn {
+    margin-bottom: 1%;
 }
 
 .computer-area {
@@ -31,3 +41,6 @@ body {
     
 }
 
+#score-area {
+    font-size: 1.5rem;
+}
