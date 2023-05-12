@@ -1,27 +1,67 @@
-window.addEventListener('load', function() {
+window.addEventListener('load', function(){
 
 let rockBtn = document.getElementById('rock-btn');
     rockBtn.addEventListener('click', function() {
         let playerChoice = "rock";
         let computerChoice = computerPlay();
-        let result = playGame(playerChoice, computerChoice);
-        updateScore(result);
-    });
+        playGame(playerChoice, computerChoice);
+        
+        if (playerChoice == "rock" && computerChoice == "scissors") {
+            alert("You Win! You chose Rock and the computer chose Scissors") 
+            playerScore();
+        }
+
+        else if (playerChoice == "rock" && computerChoice == "paper") {
+            alert("You Lose! You chose Rock and the computer chose Paper")
+            computerScore();
+        }
+
+        else if(playerChoice == computerChoice) {
+            alert("This round is a draw!");
+        }
+});
     
 let paperBtn = document.getElementById('paper-btn');
     paperBtn.addEventListener('click', function() {
         let playerChoice = "paper";
         let computerChoice = computerPlay();
-        let result = playGame(playerChoice, computerChoice);
-        updateScore(result);
+        playGame(playerChoice, computerChoice);
+        
+        if  (playerChoice == "Paper" && computerChoice == "Rock") {
+            alert("You Win! You chose Paper and the computer chose Rock")
+            playerScore();
+        }
+
+        else if (playerChoice == "Paper" && computerChoice == "Scissors") {
+            alert("You Lose! You chose Paper and the computer chose Scissors")
+            computerScore();
+        }
+
+        else if(playerChoice == computerChoice) {
+            alert("This round is a draw!");
+        }
     });
     
 let scissorsBtn = document.getElementById('scissors-btn');
     scissorsBtn.addEventListener('click', function() {
         let playerChoice = "scissors";
         let computerChoice = computerPlay();
-        let result = playGame(playerChoice, computerChoice);
-        updateScore(result);
+        playGame(playerChoice, computerChoice);
+
+        if (playerChoice == "Scissors" && computerChoice == "Paper") {
+            alert("You Win! You chose Scissors and the computer chose Paper")
+            playerScore();
+        }
+
+        else if (playerChoice == "scissors" && computerChoice == "rock") {
+            alert("You Lose! You chose Scissors and the computer chose Rock")
+            computerScore();
+        }
+
+        else if(playerChoice == computerChoice) {
+            alert("This round is a draw!");
+        }
+        
     });
 
 let options = ["rock", "paper", "scissors"];
@@ -31,37 +71,7 @@ function computerPlay() {
 }
 
 function playGame(playerChoice, computerChoice) {
-    let computerChoice = computerPlay();
     
-    if (playerChoice == "rock" && computerChoice == "scissors") {
-        return "You Win! You chose Rock and the computer chose Scissors";
-    }
-
-    else if (playerChoice == "Scissors" && computerChoice == "Paper") {
-        return "You Win! You chose Scissors and the computer chose Paper";
-    }
-
-    else if (playerChoice == "Paper" && computerChoice == "Rock") {
-        return "You Win! You chose Paper and the computer chose Rock";
-    }
-
-    else if (playerChoice == "rock" && computerChoice == "paper") {
-        return "You Lose! You chose Rock and the computer chose Paper";
-    }
-
-    else if (playerChoice == "Paper" && computerChoice == "Scissors") {
-        return "You Lose! You chose Paper and the computer chose Scissors";
-    }
-
-    else if (playerChoice == "scissors" && computerChoice == "rock") {
-        return "You Lose! You chose Scissors and the computer chose Rock";
-    }
-
-    else if(playerChoice == computerChoice) {
-        return "This round is a draw!";
-    }
-
-}
 		
     let result = playGame(playerChoice, computerChoice);
 
@@ -102,4 +112,5 @@ function playGame(playerChoice, computerChoice) {
                 document.getElementById("c-scores").innerText = ++oldComputerScore;
             
         }
-});
+    }
+})
