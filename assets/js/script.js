@@ -1,14 +1,38 @@
+window.addEventListener('load', function() {
+
+let rockBtn = document.getElementById('rock-btn');
+    rockBtn.addEventListener('click', function() {
+        let playerChoice = "rock";
+        let computerChoice = computerPlay();
+        let result = playGame(playerChoice, computerChoice);
+        updateScore(result);
+    });
+    
+let paperBtn = document.getElementById('paper-btn');
+    paperBtn.addEventListener('click', function() {
+        let playerChoice = "paper";
+        let computerChoice = computerPlay();
+        let result = playGame(playerChoice, computerChoice);
+        updateScore(result);
+    });
+    
+let scissorsBtn = document.getElementById('scissors-btn');
+    scissorsBtn.addEventListener('click', function() {
+        let playerChoice = "scissors";
+        let computerChoice = computerPlay();
+        let result = playGame(playerChoice, computerChoice);
+        updateScore(result);
+    });
+
 let options = ["rock", "paper", "scissors"];
 
 function computerPlay() {
     return options[Math.floor(Math.random() * options.length)];
 }
 
-let playerChoice = this.id;
-	
-let computerChoice = computerPlay();
-
 function playGame(playerChoice, computerChoice) {
+    let computerChoice = computerPlay();
+    
     if (playerChoice == "rock" && computerChoice == "scissors") {
         return "You Win! You chose Rock and the computer chose Scissors";
     }
@@ -78,3 +102,4 @@ function playGame(playerChoice, computerChoice) {
                 document.getElementById("c-scores").innerText = ++oldComputerScore;
             
         }
+});
